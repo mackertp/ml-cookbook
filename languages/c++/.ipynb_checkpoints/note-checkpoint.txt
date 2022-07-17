@@ -1,4 +1,0 @@
-- sql
-- r
-- java
-- node_js

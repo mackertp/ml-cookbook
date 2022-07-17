@@ -1,4 +1,13 @@
-- sql
-- r
-- java
-- node_js
+C++ is widely used within operating systems, web browsers, microcontrollers and video games. It is an older language, but 
+provides flexibility and low level functionality that make it incredibly useful to know and use for projects.
+
+Here, we are going to store a couple of simple programs in C++. Code can be broken down in Jupyter code blocks as well, using a 
+conda enviornment and xeus-cling (a library that enables a jupyter kernel for c++). The jupyter kernel is currently not working 
+with windows and is experiencing some issues with the latest version of macos. So for the sake of this repo, we will start with a 
+simple c++ application just to demo the language. 
+
+I am running the program on mac os. To copy my setup, cd into the simple-app folder and run:
+
+> g++ hello.cpp
+> ./a.out
+
