@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "ml-cookbook"
+version = "0.1.0"
+description = "Research References"
+authors = ["Preston Mackert"]
+license = "MIT"
+readme = "ReadMe.md"
+packages = [{include = "ml_cookbook"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+jupyterlab = "^3.5.2"
+tensorflow = "^2.11.0"
+numpy = "^1.24.1"
+pandas = "^1.5.2"
+ipykernel = "^6.19.4"
+matplotlib = "^3.6.2"
+seaborn = "^0.12.2"
+scikit-learn = "^1.2.0"
+psycopg2-binary = "^2.9.5"
+sqlalchemy = "^1.4.45"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
