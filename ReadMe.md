@@ -1,13 +1,13 @@
 # ML-Cookbook
 
-Ask me about [design.sip-research.com](https://design.sip-research.com/?path=/docs/sip-design--docs).
+This project uses [poetry](https://python-poetry.org/) for packaging and dependency management. Ask me about [design.sip-research.com](https://design.sip-research.com/?path=/docs/sip-design--docs).
 
     .
     ├── .github                 # GitHub actions ~ yaml
     ├── bioinformatics          # Open source research perspective
     ├── languages               # sharpen your axe
-    ├── poetry.lock             # Pinned dependencies ([poetry](https://python-poetry.org/))
-    ├── pyproject.toml          # Project config ([poetry](https://python-poetry.org/))
+    ├── poetry.lock             # Pinned dependencies (poetry)
+    ├── pyproject.toml          # Project config (poetry)
     └── ReadMe.md
 
 
