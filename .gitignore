@@ -1,0 +1,9 @@
+*.ipynb_checkpoints
+*node_modules
+*.env
+*note.txt
+
+book/chapter-1.ipynb
+
+design-system/node_modules
+languages/ROS/ros2_humble
