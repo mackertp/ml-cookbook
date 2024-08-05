@@ -13,6 +13,5 @@ This project uses [poetry](https://python-poetry.org/) for packaging and depende
 
 ### Ponderings 🤔
 
-[References](https://stackoverflow.co/teams/ai/?utm_medium=ppc&utm_source=house-ads&utm_campaign=teams-overflowai-launch)
+[What is code?](https://youtu.be/S8f1S1G9BJY?si=u_fu4scye6AqNx3H)
 
-<img src='https://programmerhumor.io/wp-content/uploads/2022/06/programmerhumor-io-programming-memes-b606b1a8c80f5ea.jpg' width='375'/>
