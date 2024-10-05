@@ -13,5 +13,5 @@ This project uses [poetry](https://python-poetry.org/) for packaging and depende
 
 ### Ponderings 🤔
 
-[What is code?](https://youtu.be/S8f1S1G9BJY?si=u_fu4scye6AqNx3H)
+[What is code?](https://youtube.com/shorts/ECFbI38tGtQ?si=CS8sLTd9qgCHUUwZ)
 
