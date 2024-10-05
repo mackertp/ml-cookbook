@@ -11,7 +11,7 @@
 
 /*
 * Convert to an object file:
-*    $ as hello.s -o hello.o
+*   $ as hello.s -o hello.o
 *
 * Use linker to convert into an executable file named "app":
 *   $ ld hello.o -o app -l System -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _main -arch arm64
