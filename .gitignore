@@ -8,3 +8,5 @@ book/chapter-1.ipynb
 design-system/node_modules
 languages/ROS/ros2_humble
 .DS_Store
+
+languages/rust/project/target
