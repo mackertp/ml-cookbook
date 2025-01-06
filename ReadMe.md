@@ -1,6 +1,6 @@
 # ML-Cookbook
 
-This project uses [poetry](https://python-poetry.org/) for packaging and dependency management. Ask me about [design.sip-research.com](https://design.sip-research.com/).
+This project uses [poetry](https://python-poetry.org/) for packaging and dependency management. Ask me about [dev.sip-research.com](https://dev.sip-research.com/).
 
     .
     ├── .github                 # GitHub actions ~ yaml
@@ -14,4 +14,3 @@ This project uses [poetry](https://python-poetry.org/) for packaging and depende
 ### Ponderings 🤔
 
 [What is code?](https://youtube.com/shorts/ySzd4bctWSo?si=0cXFeBpqD4_ETWVr)
-
