@@ -628,6 +628,21 @@ files = [
 tests = ["asttokens (>=2.1.0)", "coverage", "coverage-enable-subprocess", "ipython", "littleutils", "pytest", "rich"]
 
 [[package]]
+name = "fanucpy"
+version = "0.1.14"
+description = "Python package for FANUC industrial robots"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "fanucpy-0.1.14-py3-none-any.whl", hash = "sha256:fcc51cee9e2c447dc122fb9cd07d6125d8408fa0eb38ca79a19474e8b6f90a8d"},
+    {file = "fanucpy-0.1.14.tar.gz", hash = "sha256:b77fcbcc2924f9c6ee0d6d5b38641b9b0adc28e3fddbdb6e836969c85a88ed42"},
+]
+
+[package.dependencies]
+numpy = ">=1.24.0,<2.0.0"
+scipy = ">=1.10.0,<2.0.0"
+
+[[package]]
 name = "fastjsonschema"
 version = "2.20.0"
 description = "Fastest Python implementation of JSON schema"
@@ -3752,4 +3767,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12"
-content-hash = "f7d6ce75603ff5365ae98650c2c3dfd895a87288d42b3a82959791bede1a05ac"
+content-hash = "ae6da41dabf08ce6d32df1a8995b1fb5df96e56430eea0d37d75ac904081a7c2"

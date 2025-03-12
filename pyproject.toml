@@ -22,6 +22,7 @@ sqlalchemy = "^1.4.45"
 chempy = "^0.9.0"
 periodictable = "^1.7.0"
 pytest = "^8.2.0"
+fanucpy = "^0.1.14"
 
 
 [build-system]
