@@ -6,6 +6,7 @@ This project uses [poetry](https://python-poetry.org/) for packaging and depende
     ├── .github                 # GitHub actions ~ yaml
     ├── bioinformatics          # Open source research perspective
     ├── languages 
+    ├── robotics 
     ├── poetry.lock             # Pinned dependencies (poetry)
     ├── pyproject.toml          # Project config (poetry)
     └── ReadMe.md
