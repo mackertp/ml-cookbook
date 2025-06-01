@@ -2,7 +2,6 @@
 
 [Rosalind](https://rosalind.info/problems/locations/) is a platform built to help teach bioinformatics. It provides a curriculum that walks through the solutions for computational problems of varying difficulty. These problems are all extracted from real challenges that are presented in molecular biology.
 
-
 The platform has a fairly large user base and an active [GitHub Community](https://github.com/topics/rosalind-solutions) that regularly shares solutions to problems. Solutions to problems are checked automatically for accuracy, and your account is given a score based on metadata surrounding your submission.
 
 I strongly encourage developing the algorithm in a Jupyter Notebook, this way you have a solution ready *before* triggering the [ROSALIND SHOT CLOCK](https://youtu.be/9LbSyRvK8Gc?si=XMFGELwiD-QEYqRv)!
