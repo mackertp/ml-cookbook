@@ -7,6 +7,9 @@ license = "MIT"
 readme = "ReadMe.md"
 packages = [{include = "ml_cookbook"}]
 
+# install dependencies, then explore the notebooks with:
+# poetry install
+# poetry jupyter-lab
 [tool.poetry.dependencies]
 python = "^3.12"
 jupyterlab = "^3.5.2"
@@ -24,6 +27,23 @@ periodictable = "^1.7.0"
 pytest = "^8.2.0"
 fanucpy = "^0.1.14"
 rdkit = "^2025.3.2"
+ibm-watson = "^10.0.0"
+openpyxl = "^3.1.5"
+openai = "^1.97.0"
+google-genai = "^1.26.0"
+boto3 = "^1.39.8"
+dotenv = "^0.9.9"
+youtube-dl = "^2021.12.17"
+yt-dlp = "^2025.6.30"
+azure-mgmt-resource = "^24.0.0"
+azure-identity = "^1.23.1"
+torch = "^2.7.1"
+transformers = "^4.53.3"
+ipywidgets = "^8.1.7"
+qiskit-ibm-runtime = "^0.40.1"
+qiskit-aer = "^0.17.1"
+pylatexenc = "^2.10"
+qiskit = "^2.1.1"
 
 
 [build-system]
