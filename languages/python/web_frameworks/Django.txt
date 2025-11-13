@@ -1,0 +1,3 @@
+https://www.djangoproject.com/
+
+I suggest you organize your files using this framework... the world is your oyster, but keep that oyster secure :)
