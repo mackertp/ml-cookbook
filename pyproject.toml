@@ -44,6 +44,8 @@ qiskit-ibm-runtime = "^0.40.1"
 qiskit-aer = "^0.17.1"
 pylatexenc = "^2.10"
 qiskit = "^2.1.1"
+simple-salesforce = "^1.12.9"
+python-dotenv = "^1.2.2"
 
 
 [build-system]
