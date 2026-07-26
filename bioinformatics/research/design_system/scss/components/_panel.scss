@@ -1,0 +1,129 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.panel {
+  @include panel;
+  padding: $space-5;
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: $space-2;
+    margin-bottom: $space-4;
+  }
+
+  &__hint {
+    color: $color-ink-muted;
+    font-size: 0.9rem;
+  }
+}
+
+.field {
+  display: grid;
+  gap: $space-2;
+
+  &[hidden] {
+    display: none;
+  }
+
+  label {
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  select,
+  textarea {
+    width: 100%;
+    border: 1px solid $color-line;
+    border-radius: $radius-md;
+    background: $color-paper;
+    color: $color-ink;
+  }
+
+  select,
+  textarea {
+    padding: $space-3;
+  }
+
+  textarea {
+    min-height: 7.5rem;
+    resize: vertical;
+    font-family: $font-mono;
+    font-size: 0.85rem;
+  }
+
+  select:focus-visible,
+  textarea:focus-visible,
+  input:focus-visible {
+    @include focus-ring;
+  }
+
+  &__help {
+    color: $color-ink-muted;
+    font-size: 0.82rem;
+
+    a {
+      color: $color-accent-deep;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  margin-top: $space-2;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-2;
+  font-size: 0.92rem;
+
+  input {
+    margin-top: 0.2rem;
+  }
+}
+
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  input {
+    margin: 0;
+  }
+
+  &.is-disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.input-mode {
+  &[hidden] {
+    display: none;
+  }
+}
+
+.field__help[hidden] {
+  display: none;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Genomics Research</title>
+  <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='img/favicon.jpg') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="hero__brand">ml-cookbook / bioinformatics / research</p>
+      <p class="eyebrow">Genomics Research App</p>
+      <h1>Sequence Analysis</h1>
+      <a class="hero__learn" href="{{ url_for('sequencing') }}">Learn How Sequencing Works</a>
+
+      <div class="picker research-picker" id="research-picker">
+        <span class="picker__label" id="research-area-label">Research area</span>
+        <div class="picker__control">
+          <button
+            type="button"
+            class="picker__toggle"
+            id="research-area-toggle"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-labelledby="research-area-label research-area-toggle"
+          >
+            <span id="research-area-value">
+              {% for area in research_areas %}{% if area.id == 'cancer' %}{{ area.label }}{% endif %}{% endfor %}
+            </span>
+            <i class="picker__arrow" aria-hidden="true"></i>
+          </button>
+          <ul class="picker__menu" id="research-area-menu" role="listbox" aria-labelledby="research-area-label" hidden>
+            {% for area in research_areas %}
+            <li
+              class="picker__option"
+              role="option"
+              data-value="{{ area.id }}"
+              tabindex="-1"
+              aria-selected="{{ 'true' if area.id == 'cancer' else 'false' }}"
+            >
+              {{ area.label }}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="lede hero__copy" id="hero-copy">
+        {% for area in research_areas %}
+          {% if area.id == 'cancer' %}{{ area.description | safe }}{% endif %}
+        {% endfor %}
+      </div>
+    </header>
+
+    <div id="error" class="error-banner" role="alert"></div>
+
+    <div class="grid">
+      <section class="panel" aria-labelledby="input-heading">
+        <div class="panel__header">
+          <h2 id="input-heading">Input</h2>
+          <p class="panel__hint">FASTA or raw DNA</p>
+        </div>
+
+        <form id="analyze-form" class="stack" novalidate>
+          <p class="field__help">
+            The <strong>reference sequence</strong> is the expected “normal” DNA for the gene region you want
+            to compare against. Pick a teaching reference from the dropdown, or upload your own.
+            <br />
+            <br />
+            The <strong>sample sequence</strong> is the DNA you are testing — from a teaching pair in
+            <code>data/</code>, or pasted / uploaded yourself.
+          </p>
+          <div class="field">
+            <div class="picker picker--compact" id="preset-picker">
+              <span class="picker__label" id="preset-label">Reference</span>
+              <div class="picker__control">
+                <button
+                  type="button"
+                  class="picker__toggle"
+                  id="preset-toggle"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-labelledby="preset-label preset-toggle"
+                >
+                  <span id="preset-value">EGFR</span>
+                  <i class="picker__arrow" aria-hidden="true"></i>
+                </button>
+                <ul class="picker__menu" id="preset-menu" role="listbox" aria-labelledby="preset-label" hidden></ul>
+              </div>
+            </div>
+            <input type="hidden" id="preset_id" name="preset_id" value="egfr_exon19" />
+            <p class="field__help" id="preset-context">
+              A small stretch of the EGFR gene (exon 19), the most frequent activating mutations in non-small cell lung cancer.
+            </p>
+          </div>
+
+          <div class="field" id="custom-reference" hidden>
+            <label>Custom reference sequence</label>
+            <div class="radio-row" role="radiogroup" aria-label="Reference input method">
+              <label class="radio">
+                <input type="radio" name="reference_mode" value="paste" checked />
+                <span>Paste</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="reference_mode" value="upload" />
+                <span>Upload</span>
+              </label>
+            </div>
+            <div class="input-mode" id="reference-paste">
+              <textarea id="reference_text" name="reference_text" placeholder=">reference&#10;ATG..."></textarea>
+            </div>
+            <div class="input-mode" id="reference-upload" hidden>
+              <div class="upload" data-upload="reference">
+                <p class="upload__title">Drop reference FASTA</p>
+                <p class="upload__meta">or choose a file</p>
+                <input id="reference_file" name="reference_file" type="file" accept=".fasta,.fa,.txt,text/plain" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field" id="sample-input">
+            <label>Sample Sequence</label>
+            <div class="radio-row" role="radiogroup" aria-label="Sample input method">
+              <label class="radio">
+                <input type="radio" name="sample_mode" value="demo" checked />
+                <span>Teaching sample</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="sample_mode" value="paste" />
+                <span>Paste</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="sample_mode" value="upload" />
+                <span>Upload</span>
+              </label>
+            </div>
+            <p class="field__help" id="sample-demo-help">
+              Uses the paired teaching sample from <code>data/</code> for the selected reference.
+            </p>
+            <div class="input-mode" id="sample-paste" hidden>
+              <textarea id="sample_text" name="sample_text" placeholder="Paste sample DNA here"></textarea>
+            </div>
+            <div class="input-mode" id="sample-upload" hidden>
+              <div class="upload" data-upload="sample">
+                <p class="upload__title">Drop sample FASTA</p>
+                <p class="upload__meta">Or choose a FASTA / text file from your computer.</p>
+                <input id="sample_file" name="sample_file" type="file" accept=".fasta,.fa,.txt,text/plain" />
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="button" type="submit" id="analyze-btn">Compare &amp; translate</button>
+            <button class="button button--ghost" type="button" id="clear-btn">Clear sample</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel stack" aria-labelledby="results-heading">
+        <div class="panel__header">
+          <h2 id="results-heading">Results</h2>
+          <div class="legend" aria-hidden="true">
+            <span><i class="swatch-deletion"></i> deletion</span>
+            <span><i class="swatch-insertion"></i> insertion</span>
+            <span><i class="swatch-mismatch"></i> mismatch</span>
+          </div>
+        </div>
+
+        <div id="results-empty" class="empty-state">
+          Run an analysis to highlight sequence anomalies and protein impact.
+        </div>
+
+        <div id="results" class="stack" hidden>
+          <div class="stat-row" id="stat-row"></div>
+          <div class="sequence-view">
+            <p class="sequence-view__label">Reference DNA</p>
+            <div class="sequence-view__track" id="ref-track"></div>
+            <p class="sequence-view__label">Sample DNA</p>
+            <div class="sequence-view__track" id="sample-track"></div>
+          </div>
+          <div>
+            <h3>Variant events</h3>
+            <div class="anomaly-list" id="events"></div>
+          </div>
+          <div>
+            <h3>Protein translation</h3>
+            <pre class="protein-view" id="protein-view"></pre>
+          </div>
+          <div id="indication-block" hidden>
+            <h3>Potential Indication</h3>
+            <p class="field__help">
+              The disease context for this teaching example. Custom references will not 
+              show an indication.
+            </p>
+            <div class="indication" id="indication"></div>
+          </div>
+          <div>
+            <h3>Result notes</h3>
+            <div class="anomaly-list" id="notes"></div>
+            <p class="notes-summary" id="notes-summary" hidden></p>
+          </div>
+          <div>
+            <h3>Suggested treatments</h3>
+            <p class="field__help">
+              Teaching-level matches for genotype-informed medicines or dosing alternatives linked to the
+              detected alteration. Molecule names link to
+              <a href="https://go.drugbank.com/" target="_blank" rel="noopener noreferrer">DrugBank</a>;
+              brand names link to DailyMed labels. Not medical advice.
+            </p>
+            <div class="treatment-grid" id="treatments"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <p class="footer-note">
+      This is a tool for teaching/learning about key concepts. It allows you to pick a teaching reference sequence or upload your own, then learn 
+      how mutations might impact the protein made by the gene. This app does not use real patient infromation.
+    </p>
+  </main>
+  <script>
+    window.__PRESETS__ = {{ presets | tojson }};
+    window.__RESEARCH_AREAS__ = {{ research_areas | tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

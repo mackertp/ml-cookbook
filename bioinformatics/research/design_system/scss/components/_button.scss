@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  min-height: 2.75rem;
+  padding: 0 $space-5;
+  border: 0;
+  border-radius: $radius-md;
+  background: $color-accent;
+  color: #fff;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+
+  &:hover {
+    background: $color-accent-deep;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-accent-deep;
+    border: 1px solid $color-line;
+
+    &:hover {
+      background: $color-accent-soft;
+    }
+  }
+}

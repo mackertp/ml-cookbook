@@ -1,0 +1,92 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.treatment-grid {
+  display: grid;
+  gap: $space-3;
+  margin-top: $space-5;
+
+  @media (min-width: 560px) {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+.treatment-card {
+  display: grid;
+  gap: $space-2;
+  padding: $space-4;
+  border: 1px solid $color-line;
+  border-radius: $radius-md;
+  background: linear-gradient(180deg, $color-surface, $color-paper);
+
+  &__name {
+    font-family: $font-display;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: $color-accent-deep;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  &__class {
+    color: $color-ink-muted;
+    font-size: 0.82rem;
+  }
+
+  &__biomarker {
+    font-size: 0.86rem;
+    line-height: 1.4;
+    color: $color-ink;
+  }
+
+  &__brands {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $space-2;
+    margin-top: $space-1;
+  }
+
+  &__brands-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $color-ink-muted;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: $radius-sm;
+    background: $color-accent-soft;
+    color: $color-accent-deep;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      background: $color-accent;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  &__evidence {
+    font-size: 0.76rem;
+    color: $color-actionable;
+    font-weight: 600;
+  }
+}

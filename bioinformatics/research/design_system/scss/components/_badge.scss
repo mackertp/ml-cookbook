@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: 0.2rem 0.55rem;
+  border-radius: $radius-sm;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  &--deletion {
+    color: $color-deletion;
+    background: $color-deletion-bg;
+  }
+
+  &--insertion {
+    color: $color-insertion;
+    background: $color-insertion-bg;
+  }
+
+  &--mismatch {
+    color: $color-mismatch;
+    background: $color-mismatch-bg;
+  }
+
+  &--frameshift {
+    color: $color-critical;
+    background: $color-critical-bg;
+  }
+
+  &--inframe {
+    color: $color-actionable;
+    background: $color-actionable-bg;
+  }
+
+  &--neutral {
+    color: $color-ink-muted;
+    background: $color-paper-deep;
+  }
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}

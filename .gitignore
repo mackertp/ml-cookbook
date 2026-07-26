@@ -1,12 +1,39 @@
-*.ipynb_checkpoints
+# macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.jython_cache/
+**/.jython_cache/
+*.egg-info/
+dist/
+build/
+
+# Rust
+**/target/
+
+# Node
+node_modules/
 *node_modules
+
+# Environment and secrets
 *.env
 *note.txt
 
+# Project-specific
 book/chapter-1.ipynb
-
 design-system/node_modules
 languages/ROS/ros2_humble
-.DS_Store
-
-languages/rust/project/target

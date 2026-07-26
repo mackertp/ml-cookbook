@@ -1,0 +1,63 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.sequence-view {
+  display: grid;
+  gap: $space-3;
+
+  &__label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $color-ink-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  &__track {
+    @include mono-block;
+    padding: $space-3;
+    border-radius: $radius-md;
+    background: #0f1a22;
+    color: #d7e2ea;
+    overflow-x: auto;
+  }
+
+  &__base {
+    border-radius: 2px;
+    padding: 0 1px;
+
+    &--deletion {
+      background: $color-deletion;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    &--deletion-edge {
+      box-shadow: inset 0 -3px 0 $color-deletion;
+    }
+
+    &--insertion {
+      background: $color-insertion;
+      color: #fff;
+    }
+
+    &--insertion-edge {
+      box-shadow: inset 0 -3px 0 $color-insertion;
+    }
+
+    &--mismatch {
+      background: $color-mismatch;
+      color: #fff;
+    }
+  }
+}
+
+.protein-view {
+  @include mono-block;
+  white-space: pre-wrap;
+  padding: $space-3;
+  border-radius: $radius-md;
+  background: $color-paper;
+  border: 1px solid $color-line;
+  color: $color-ink;
+}

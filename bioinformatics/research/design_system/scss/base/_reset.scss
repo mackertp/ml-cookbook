@@ -1,0 +1,34 @@
+@use "../abstracts/variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: $color-ink;
+  font-family: $font-body;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(13, 110, 110, 0.12), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(180, 71, 8, 0.08), transparent 50%),
+    linear-gradient(180deg, $color-paper 0%, $color-paper-deep 100%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

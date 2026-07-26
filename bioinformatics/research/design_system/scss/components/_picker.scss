@@ -1,0 +1,164 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.picker {
+  &__label {
+    display: block;
+    margin-bottom: $space-2;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-accent-deep;
+  }
+
+  &__control {
+    position: relative;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-3;
+    width: 100%;
+    min-height: 3.5rem;
+    padding: 0.9rem 1.15rem;
+    border: 1.5px solid $color-line;
+    border-radius: $radius-lg;
+    background: linear-gradient(180deg, $color-surface 0%, $color-paper 100%);
+    box-shadow: $shadow-soft;
+    color: $color-ink;
+    font-family: $font-display;
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+
+    &:hover {
+      border-color: mix($color-accent, $color-line, 45%);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+      border-color: $color-accent;
+    }
+  }
+
+  &__arrow {
+    flex: 0 0 auto;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.2rem;
+    border-right: 2px solid $color-accent-deep;
+    border-bottom: 2px solid $color-accent-deep;
+    transform: rotate(45deg) translate(-0.1rem, -0.1rem);
+    transition: transform 220ms ease;
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + #{$space-2});
+    left: 0;
+    right: 0;
+    z-index: 20;
+    max-height: 20rem;
+    overflow-y: auto;
+    margin: 0;
+    padding: $space-2;
+    list-style: none;
+    border: 1.5px solid $color-line;
+    border-radius: $radius-lg;
+    background: $color-surface;
+    box-shadow: $shadow-soft;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__option {
+    padding: 0.65rem 0.85rem;
+    border-radius: $radius-md;
+    color: $color-ink;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover,
+    &.is-active {
+      background: $color-accent-soft;
+      color: $color-accent-deep;
+    }
+
+    &[aria-selected="true"] {
+      background: $color-accent;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  &.is-open {
+    .picker__toggle {
+      border-color: $color-accent;
+    }
+
+    .picker__arrow {
+      transform: rotate(-135deg) translate(-0.1rem, -0.1rem);
+    }
+  }
+
+  &--compact {
+    .picker__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      margin-bottom: $space-1;
+    }
+
+    .picker__toggle {
+      min-height: 2.65rem;
+      padding: 0.55rem 0.9rem;
+      font-size: 1rem;
+      border-radius: $radius-md;
+      box-shadow: none;
+    }
+
+    .picker__arrow {
+      width: 0.48rem;
+      height: 0.48rem;
+    }
+
+    .picker__menu {
+      border-radius: $radius-md;
+      max-height: 16rem;
+    }
+
+    .picker__option {
+      padding: 0.5rem 0.7rem;
+      font-size: 0.92rem;
+    }
+  }
+}
+
+.research-picker {
+  margin-top: $space-5;
+  margin-bottom: $space-4;
+  max-width: 36rem;
+}
+
+.hero__copy {
+  a {
+    color: $color-accent-deep;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}

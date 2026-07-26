@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.shell {
+  width: min(100% - 2rem, $max-width);
+  margin: 0 auto;
+  padding: $space-6 0 $space-7;
+}
+
+.hero {
+  margin-bottom: $space-6;
+
+  &__brand {
+    font-family: $font-display;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $color-accent-deep;
+    margin-bottom: $space-4;
+  }
+
+  &__copy {
+    margin-top: $space-3;
+    max-width: none;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $space-5;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1.05fr 1.2fr;
+    align-items: start;
+  }
+}
+
+.stack {
+  display: grid;
+  gap: $space-4;
+}
+
+.footer-note {
+  margin-top: $space-6;
+  color: $color-ink-muted;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

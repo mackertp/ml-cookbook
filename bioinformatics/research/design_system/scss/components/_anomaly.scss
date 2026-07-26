@@ -1,0 +1,135 @@
+@use "../abstracts/variables" as *;
+
+.anomaly-list {
+  display: grid;
+  gap: $space-3;
+}
+
+.anomaly {
+  border-radius: $radius-md;
+  border: 1px solid $color-line;
+  padding: $space-4;
+  background: $color-surface;
+
+  &--critical {
+    border-color: mix($color-critical, $color-line, 55%);
+    background: $color-critical-bg;
+  }
+
+  &--warning {
+    border-color: mix($color-warning, $color-line, 45%);
+    background: $color-warning-bg;
+  }
+
+  &--actionable {
+    border-color: mix($color-actionable, $color-line, 45%);
+    background: $color-actionable-bg;
+  }
+
+  &--info {
+    border-color: mix($color-info, $color-line, 40%);
+    background: $color-info-bg;
+  }
+
+  &__title {
+    margin-bottom: $space-2;
+  }
+
+  &__detail {
+    color: $color-ink;
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+}
+
+.notes-summary {
+  margin: $space-5 0 0;
+  padding: $space-4;
+  border-left: 3px solid $color-accent;
+  background: $color-accent-soft;
+  border-radius: 0 $radius-md $radius-md 0;
+  color: $color-ink;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+
+  strong {
+    font-weight: 700;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.event-chip {
+  display: grid;
+  gap: $space-1;
+  padding: $space-3;
+  border-radius: $radius-md;
+  border: 1px solid $color-line;
+  background: $color-paper;
+  font-size: 0.9rem;
+
+  code {
+    font-family: $font-mono;
+    font-size: 0.82rem;
+  }
+}
+
+.empty-state {
+  color: $color-ink-muted;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: $space-5;
+  border: 1px dashed $color-line;
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.error-banner {
+  display: none;
+  margin-bottom: $space-4;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  background: $color-critical-bg;
+  color: $color-critical;
+  border: 1px solid mix($color-critical, #fff, 25%);
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  font-size: 0.82rem;
+  color: $color-ink-muted;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+  }
+
+  i {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .swatch-deletion {
+    background: $color-deletion;
+  }
+
+  .swatch-insertion {
+    background: $color-insertion;
+  }
+
+  .swatch-mismatch {
+    background: $color-mismatch;
+  }
+}

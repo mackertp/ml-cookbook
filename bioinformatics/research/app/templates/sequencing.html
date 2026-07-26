@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Sequencing Works · Genomics Research</title>
+  <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='img/favicon.jpg') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+<body>
+  <main class="shell sequencing-page">
+    <header class="hero hero--compact">
+      <p class="hero__brand">ml-cookbook / bioinformatics / research</p>
+      <p class="eyebrow">Genomics Research App</p>
+      <div class="sequencing-page__toolbar">
+        <a class="button button--ghost sequencing-page__back" href="{{ url_for('index') }}">
+          <span aria-hidden="true">←</span> Back
+        </a>
+        <h1 class="sequencing-page__title">How Sequencing Works</h1>
+      </div>
+      <p class="sequencing-page__when">
+        The animation below explains the process of how a sample is sequenced. Sequencing is used for a variety of reasons: 
+        picking targeted cancer therapies, diagnosing rare Mendelian diseases, adjusting an individual's drug dose, matching a transplant, 
+        or tracking a resistant pathogen.
+        <br /><br />
+        End-to-end clinical testing can run from a few hundred dollars for a focused gene panel to roughly <strong>$1,000–$5,000+</strong> 
+        for clinical exome or genome work. Sequencing is <strong>not</strong> typically used when imaging and pathology have already give 
+        a clear treatment path or if phenotype-directed treatments are better suited to address the indication.
+      </p>
+    </header>
+
+    <section class="sequencing" aria-labelledby="sequencing-caption">
+      <div class="sequencing__stage" id="sequencing-stage" data-step="0">
+        <div class="sequencing__canvas" aria-hidden="true">
+          <!-- Step 0: sample -->
+          <div class="seq-scene seq-scene--sample">
+            <div class="seq-vial">
+              <div class="seq-vial__fluid"></div>
+              <div class="seq-vial__cells">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="seq-label">Sample</div>
+          </div>
+
+          <!-- Step 1: extract DNA -->
+          <div class="seq-scene seq-scene--extract">
+            <div class="seq-pipeline seq-pipeline--extract">
+              <div class="seq-substep">
+                <div class="seq-substep__visual">
+                  <div class="seq-lyse">
+                    <span class="seq-lyse__cell"></span>
+                    <span class="seq-lyse__burst"></span>
+                    <span class="seq-lyse__burst"></span>
+                    <span class="seq-lyse__burst"></span>
+                  </div>
+                </div>
+                <p class="seq-substep__title">1. Lyse the cells</p>
+                <p class="seq-substep__note">Detergent buffer pops open membranes so DNA spills out.</p>
+              </div>
+              <div class="seq-substep">
+                <div class="seq-substep__visual">
+                  <div class="seq-clear">
+                    <span class="seq-clear__protein"></span>
+                    <span class="seq-clear__protein"></span>
+                    <span class="seq-clear__protein"></span>
+                    <span class="seq-clear__dna"></span>
+                  </div>
+                </div>
+                <p class="seq-substep__title">2. Clear away proteins</p>
+                <p class="seq-substep__note">Enzymes / salt remove histones and nucleases that would shred DNA.</p>
+              </div>
+              <div class="seq-substep">
+                <div class="seq-substep__visual">
+                  <div class="seq-isolate">
+                    <div class="seq-isolate__column"></div>
+                    <div class="seq-isolate__helix">
+                      <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="seq-substep__title">3. Isolate the DNA</p>
+                <p class="seq-substep__note">DNA sticks to a column or beads, then is washed and eluted clean.</p>
+              </div>
+            </div>
+            <div class="seq-label">Extract DNA</div>
+          </div>
+
+          <!-- Step 2: fragments / library prep -->
+          <div class="seq-scene seq-scene--fragment">
+            <div class="seq-pipeline seq-pipeline--fragment">
+              <div class="seq-substep">
+                <div class="seq-substep__visual">
+                  <div class="seq-shear">
+                    <span class="seq-shear__long"></span>
+                    <span class="seq-shear__cut"></span>
+                    <span class="seq-shear__pieces">
+                      <i></i><i></i><i></i><i></i>
+                    </span>
+                  </div>
+                </div>
+                <p class="seq-substep__title">1. Fragment the DNA</p>
+                <p class="seq-substep__note">Sound waves or enzymes chop long chromosomes into short pieces.</p>
+              </div>
+              <div class="seq-substep">
+                <div class="seq-substep__visual">
+                  <div class="seq-repair">
+                    <span class="seq-repair__frag"></span>
+                    <span class="seq-repair__cap seq-repair__cap--left">A</span>
+                    <span class="seq-repair__cap seq-repair__cap--right">A</span>
+                  </div>
+                </div>
+                <p class="seq-substep__title">2. Repair the ends</p>
+                <p class="seq-substep__note">Ends are cleaned up (often with an “A” overhang) so adapters fit.</p>
+              </div>
+              <div class="seq-substep">
+                <div class="seq-substep__visual">
+                  <div class="seq-adapt">
+                    <span class="seq-adapt__tag">adapter</span>
+                    <span class="seq-adapt__frag"></span>
+                    <span class="seq-adapt__tag">adapter</span>
+                  </div>
+                </div>
+                <p class="seq-substep__title">3. Attach adapters</p>
+                <p class="seq-substep__note">Known DNA tags let fragments stick to the machine and carry barcodes.</p>
+              </div>
+              <div class="seq-substep">
+                <div class="seq-substep__visual">
+                  <div class="seq-amp">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <p class="seq-substep__title">4. Amplify (optional)</p>
+                <p class="seq-substep__note">PCR makes many copies so the sequencing signal is strong enough to read.</p>
+              </div>
+            </div>
+            <div class="seq-label">Fragment &amp; prepare</div>
+          </div>
+
+          <!-- Step 3: read bases -->
+          <div class="seq-scene seq-scene--read">
+            <div class="seq-reader">
+              <div class="seq-reader__beam"></div>
+              <div class="seq-reader__bases">
+                <span class="base base--a">A</span>
+                <span class="base base--t">T</span>
+                <span class="base base--g">G</span>
+                <span class="base base--c">C</span>
+                <span class="base base--a">A</span>
+                <span class="base base--g">G</span>
+                <span class="base base--t">T</span>
+                <span class="base base--c">C</span>
+              </div>
+            </div>
+            <div class="seq-label">Read each base</div>
+          </div>
+
+          <!-- Step 4: letters in the app -->
+          <div class="seq-scene seq-scene--letters">
+            <div class="seq-output">
+              <code class="seq-output__text" id="seq-output-text"></code>
+            </div>
+            <div class="seq-label">Letters for the app</div>
+          </div>
+        </div>
+
+        <div class="sequencing__copy">
+          <p class="sequencing__step-index" id="sequencing-step-index">Step 1 of 5</p>
+          <h2 id="sequencing-caption">Collect a sample</h2>
+          <p class="sequencing__detail" id="sequencing-detail">
+            Sequencing usually starts with blood, saliva, or a tissue biopsy — cells that carry the DNA you want to read.
+          </p>
+        </div>
+
+        <div class="sequencing__controls">
+          <div class="sequencing__dots" id="sequencing-dots" role="tablist" aria-label="Animation steps">
+            <button type="button" class="sequencing__dot is-active" data-step="0" aria-label="Step 1" aria-selected="true"></button>
+            <button type="button" class="sequencing__dot" data-step="1" aria-label="Step 2" aria-selected="false"></button>
+            <button type="button" class="sequencing__dot" data-step="2" aria-label="Step 3" aria-selected="false"></button>
+            <button type="button" class="sequencing__dot" data-step="3" aria-label="Step 4" aria-selected="false"></button>
+            <button type="button" class="sequencing__dot" data-step="4" aria-label="Step 5" aria-selected="false"></button>
+          </div>
+          <div class="sequencing__actions">
+            <button type="button" class="button button--ghost" id="seq-prev">Previous</button>
+            <button type="button" class="button" id="seq-next">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="machines" aria-labelledby="machines-heading">
+      <div class="machines__intro">
+        <h2 id="machines-heading">Sequencing Machines</h2>
+        <p class="machines__lede">
+          The reference and sample sequences in this app are produced by machines like the ones below. Check out these 
+          incredible manufacturers' product pages.
+        </p>
+      </div>
+
+      <div class="machines__grid">
+        <a class="machine-card" href="https://www.illumina.com/systems/sequencing-platforms/novaseq-x-plus.html" target="_blank" rel="noopener noreferrer">
+          <span class="machine-card__vendor">Illumina</span>
+          <span class="machine-card__name">NovaSeq X Plus</span>
+          <span class="machine-card__type">Sequencing by synthesis</span>
+          <span class="machine-card__detail">High-throughput platform used for whole genomes, exomes, and large clinical panels.</span>
+          <span class="machine-card__link">View platform →</span>
+        </a>
+
+        <a class="machine-card" href="https://nanoporetech.com/products/sequence/promethion" target="_blank" rel="noopener noreferrer">
+          <span class="machine-card__vendor">Oxford Nanopore</span>
+          <span class="machine-card__name">PromethION</span>
+          <span class="machine-card__type">Nanopore</span>
+          <span class="machine-card__detail">Reads DNA by threading strands through protein pores — long reads that span repeats and structural variants.</span>
+          <span class="machine-card__link">View platform →</span>
+        </a>
+
+        <a class="machine-card" href="https://www.pacb.com/revio/" target="_blank" rel="noopener noreferrer">
+          <span class="machine-card__vendor">PacBio</span>
+          <span class="machine-card__name">Revio</span>
+          <span class="machine-card__type">HiFi (SMRT)</span>
+          <span class="machine-card__detail">Highly accurate long reads used for de novo assembly and hard-to-call regions of the genome.</span>
+          <span class="machine-card__link">View platform →</span>
+        </a>
+
+        <a class="machine-card" href="https://nanoporetech.com/products/sequence/minion" target="_blank" rel="noopener noreferrer">
+          <span class="machine-card__vendor">Oxford Nanopore</span>
+          <span class="machine-card__name">MinION</span>
+          <span class="machine-card__type">Portable</span>
+          <span class="machine-card__detail">A palm-sized sequencer used in the field and for rapid pathogen and outbreak work.</span>
+          <span class="machine-card__link">View platform →</span>
+        </a>
+
+        <a class="machine-card" href="https://www.thermofisher.com/us/en/home/life-science/sequencing/next-generation-sequencing/instruments/ion-genestudio-system.html" target="_blank" rel="noopener noreferrer">
+          <span class="machine-card__vendor">Thermo Fisher</span>
+          <span class="machine-card__name">Ion GeneStudio S5</span>
+          <span class="machine-card__type">Semiconductor (Ion Torrent)</span>
+          <span class="machine-card__detail">Detects the tiny pH change released as each base is incorporated — targeted panels and amplicon sequencing.</span>
+          <span class="machine-card__link">View platform →</span>
+        </a>
+
+        <a class="machine-card" href="https://www.illumina.com/systems/sequencing-platforms/miseq.html" target="_blank" rel="noopener noreferrer">
+          <span class="machine-card__vendor">Illumina</span>
+          <span class="machine-card__name">MiSeq</span>
+          <span class="machine-card__type">Benchtop</span>
+          <span class="machine-card__detail">A widely used benchtop instrument for small genomes, targeted panels, and teaching labs.</span>
+          <span class="machine-card__link">View platform →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/sequencing.js') }}"></script>
+</body>
+</html>

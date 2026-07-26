@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.upload {
+  border: 1.5px dashed $color-line;
+  border-radius: $radius-md;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), $color-paper);
+  padding: $space-4;
+  transition: border-color 160ms ease, background 160ms ease;
+
+  &.is-dragover {
+    border-color: $color-accent;
+    background: $color-accent-soft;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: $space-1;
+  }
+
+  &__meta {
+    color: $color-ink-muted;
+    font-size: 0.85rem;
+    margin-bottom: $space-3;
+  }
+
+  input[type="file"] {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: $space-2 $space-3;
+    border: 1px solid $color-line;
+    border-radius: $radius-sm;
+    background: $color-surface;
+    color: $color-ink;
+    font-size: 0.85rem;
+    cursor: pointer;
+
+    &::file-selector-button {
+      margin-right: $space-3;
+      padding: $space-1 $space-3;
+      border: 1px solid $color-line;
+      border-radius: $radius-sm;
+      background: $color-paper;
+      color: $color-ink;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
