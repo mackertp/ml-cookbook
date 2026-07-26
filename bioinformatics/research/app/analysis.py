@@ -786,7 +786,7 @@ def translate(dna: str) -> str:
     if start == -1:
         start = 0
     protein: list[str] = []
-    for i in range(start, len(dna) - 2, 3):
+    for i in range(start, len(dna), 3):
         codon = dna[i : i + 3]
         if len(codon) < 3:
             protein.append("?")
