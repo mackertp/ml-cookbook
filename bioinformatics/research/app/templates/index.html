@@ -17,7 +17,6 @@
       <p class="eyebrow">Genomics Research App</p>
       <h1>Sequence Analysis</h1>
       <a class="hero__learn" href="{{ url_for('sequencing') }}">Learn How Sequencing Works</a>
-
       <div class="picker research-picker" id="research-picker">
         <span class="picker__label" id="research-area-label">Research area</span>
         <div class="picker__control">
@@ -65,15 +64,16 @@
           <h2 id="input-heading">Input</h2>
           <p class="panel__hint">FASTA or raw DNA</p>
         </div>
-
         <form id="analyze-form" class="stack" novalidate>
           <p class="field__help">
             The <strong>reference sequence</strong> is the expected “normal” DNA for the gene region you want
-            to compare against. Pick a teaching reference from the dropdown, or upload your own.
+            to compare against. Pick a teaching reference from the dropdown, or upload your own. The reference is often 
+            used from the
+            <a href='https://www.ncbi.nlm.nih.gov/grc' target='_blank' rel='noopener noreferrer'>shared human reference genome</a>.
             <br />
             <br />
-            The <strong>sample sequence</strong> is the DNA you are testing — from a teaching pair in
-            <code>data/</code>, or pasted / uploaded yourself.
+            The <strong>sample sequence</strong> is the DNA you are testing — from a teaching pair in the
+            data folder, or uploaded yourself.
           </p>
           <div class="field">
             <div class="picker picker--compact" id="preset-picker">
@@ -219,7 +219,7 @@
     </div>
 
     <p class="footer-note">
-      This is a tool for teaching/learning about key concepts. It allows you to pick a teaching reference sequence or upload your own, then learn 
+      This is a tool for teaching and learning about key concepts. It allows you to pick a teaching reference sequence or upload your own, then learn 
       how mutations might impact the protein made by the gene. This app does not use real patient infromation.
     </p>
   </main>

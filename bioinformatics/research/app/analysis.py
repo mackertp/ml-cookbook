@@ -572,18 +572,13 @@ CUSTOM_REFERENCE = {
 RESEARCH_AREAS = [
     {
         "id": "cancer",
-        "label": "Cancer",
+        "label": "Oncology",
         "description": (
-            "Cancer is a disease of the DNA. It starts when genetic mutations corrupt a single cell, causing it to divide "
+            "Oncology is the study of cancer, which is a disease of the DNA. It starts when genetic mutations corrupt a single cell, causing it to divide "
             "uncontrollably and refuse to die when it should. We can sequence DNA to identify genetic mutations that are "
             "present and inform treatment decisions. If the cancer is in late stages, or if a "
             "<a href='https://massivebio.com/what-are-the-differences-between-solid-and-liquid-tumors/' target='_blank' rel='noopener noreferrer'>liquid cancer</a> "
             "is identified, DNA sequencing becomes invaluable."
-            "<br /><br />"
-            "When available, the same patient's healthy DNA is commonly used as a reference in "
-            "<a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC3073190/' target='_blank' rel='noopener noreferrer'>somatic cancer testing</a>. "
-            "Otherwise, comparisons rely primarily on the "
-            "<a href='https://www.ncbi.nlm.nih.gov/grc' target='_blank' rel='noopener noreferrer'>shared human reference genome</a>."
         ),
     },
     {
