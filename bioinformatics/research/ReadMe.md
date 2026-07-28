@@ -17,7 +17,7 @@ For the most up to date research on available medications, I suggest browsing ma
 
 This folder contains a notebook, `ehrs.ipynb`, that explores health data systems, interoperability, and where genomic results would land in a clinic. A [Flask application](https://flask.palletsprojects.com/en/stable/) is stored in this folder that builds out a useful tool to research genomics.
 
-To run the app, call the flask command from this folder:
+To run the app, call the flask command from this folder (with poetry enviornment active):
 
 ```console
 python launch.py

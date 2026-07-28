@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Run the cancer-genomics teaching app from the research folder.
+Run the genomics teaching app from the research folder.
 
 @author: Preston Mackert
 """

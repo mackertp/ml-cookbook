@@ -223,9 +223,11 @@
       how mutations might impact the protein made by the gene. This app does not use real patient infromation.
     </p>
   </main>
+  <script type="application/json" id="presets-data">{{ presets | tojson }}</script>
+  <script type="application/json" id="research-areas-data">{{ research_areas | tojson }}</script>
   <script>
-    window.__PRESETS__ = {{ presets | tojson }};
-    window.__RESEARCH_AREAS__ = {{ research_areas | tojson }};
+    window.__PRESETS__ = JSON.parse(document.getElementById("presets-data").textContent);
+    window.__RESEARCH_AREAS__ = JSON.parse(document.getElementById("research-areas-data").textContent);
   </script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
