@@ -139,7 +139,7 @@ nvidia-nccl-cu13==2.29.7 ; python_version >= "3.12" and python_version < "4.0" a
 nvidia-nvjitlink==13.3.33 ; (sys_platform == "linux" or sys_platform == "win32") and (sys_platform == "linux" or platform_machine == "x86_64") and python_version >= "3.12" and python_version < "4.0" and platform_system == "Linux" and (platform_machine == "aarch64" or platform_machine == "x86_64")
 nvidia-nvshmem-cu13==3.4.5 ; python_version >= "3.12" and python_version < "4.0" and platform_system == "Linux"
 nvidia-nvtx==13.0.85 ; (sys_platform == "linux" or sys_platform == "win32") and (sys_platform == "linux" or platform_machine == "x86_64") and python_version >= "3.12" and python_version < "4.0" and platform_system == "Linux" and (platform_machine == "aarch64" or platform_machine == "x86_64")
-openai==2.49.0 ; python_version >= "3.12" and python_version < "4.0"
+openai==2.50.0 ; python_version >= "3.12" and python_version < "4.0"
 openpyxl==3.1.5 ; python_version >= "3.12" and python_version < "4.0"
 openqasm3[parser]==1.0.1 ; python_version >= "3.12" and python_version < "4.0"
 opt-einsum==3.4.0 ; python_version >= "3.12" and python_version < "4.0"
