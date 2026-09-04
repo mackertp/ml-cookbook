@@ -5,13 +5,6 @@
   outline-offset: 2px;
 }
 
-@mixin panel {
-  background: $color-surface;
-  border: 1px solid $color-line;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-soft;
-}
-
 @mixin mono-block {
   font-family: $font-mono;
   font-size: 0.85rem;

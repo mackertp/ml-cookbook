@@ -1,11 +1,13 @@
 {
-  "name": "genomics-design-system",
+  "name": "research-app-design-system",
   "private": true,
+  "description": "App-specific SCSS overrides and custom modules layered on prm-studio",
   "scripts": {
-    "build": "sass scss/main.scss:../app/static/css/main.css --style=expanded --no-source-map",
-    "watch": "sass --watch scss/main.scss:../app/static/css/main.css --style=expanded --no-source-map"
+    "build": "sass scss/main.scss:../app/static/css/research-app.css --style=expanded --no-source-map",
+    "watch": "sass --watch scss/main.scss:../app/static/css/research-app.css --style=expanded --no-source-map"
   },
   "devDependencies": {
-    "sass": "1.102.0"
-  }
+    "sass": "1.93.2"
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

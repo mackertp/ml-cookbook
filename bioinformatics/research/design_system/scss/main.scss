@@ -1,14 +1,7 @@
 @use "abstracts/variables";
-@use "base/reset";
-@use "base/typography";
-@use "layout/shell";
-@use "components/button";
-@use "components/panel";
-@use "components/upload";
-@use "components/badge";
+@use "components/research-picker";
 @use "components/sequence-view";
 @use "components/anomaly";
 @use "components/indication";
 @use "components/treatment";
-@use "components/picker";
 @use "components/sequencing";

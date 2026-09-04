@@ -8,9 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('prm_studio.static', filename='css/prm-studio.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/research-app.css') }}" />
 </head>
 <body>
+  {% set default_area = research_areas[0] if research_areas else None %}
   <main class="shell">
     <header class="hero">
       <p class="hero__brand">ml-cookbook / bioinformatics / research</p>
@@ -28,9 +30,7 @@
             aria-expanded="false"
             aria-labelledby="research-area-label research-area-toggle"
           >
-            <span id="research-area-value">
-              {% for area in research_areas %}{% if area.id == 'cancer' %}{{ area.label }}{% endif %}{% endfor %}
-            </span>
+            <span id="research-area-value">{{ default_area.label if default_area else "Research" }}</span>
             <i class="picker__arrow" aria-hidden="true"></i>
           </button>
           <ul class="picker__menu" id="research-area-menu" role="listbox" aria-labelledby="research-area-label" hidden>
@@ -40,7 +40,7 @@
               role="option"
               data-value="{{ area.id }}"
               tabindex="-1"
-              aria-selected="{{ 'true' if area.id == 'cancer' else 'false' }}"
+              aria-selected="{{ 'true' if default_area and area.id == default_area.id else 'false' }}"
             >
               {{ area.label }}
             </li>
@@ -49,11 +49,7 @@
         </div>
       </div>
 
-      <div class="lede hero__copy" id="hero-copy">
-        {% for area in research_areas %}
-          {% if area.id == 'cancer' %}{{ area.description | safe }}{% endif %}
-        {% endfor %}
-      </div>
+      <div class="lede hero__copy" id="hero-copy">{{ default_area.description | safe if default_area else "" }}</div>
     </header>
 
     <div id="error" class="error-banner" role="alert"></div>
@@ -95,7 +91,7 @@
             </div>
             <input type="hidden" id="preset_id" name="preset_id" value="egfr_exon19" />
             <p class="field__help" id="preset-context">
-              A small stretch of the EGFR gene (exon 19), the most frequent activating mutations in non-small cell lung cancer.
+              Pick a teaching reference preset or use a custom reference sequence for your genomics workflow.
             </p>
           </div>
 

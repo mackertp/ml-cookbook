@@ -1,0 +1,16 @@
+{% macro button(label, variant='primary', button_type='button') -%}
+{% set class_name = 'button' %}
+{% if variant != 'primary' %}
+{% set class_name = class_name ~ ' button--' ~ variant %}
+{% endif %}
+<button class="{{ class_name }}" type="{{ button_type }}">{{ label }}</button>
+{%- endmacro %}
+
+{% macro panel(title='') -%}
+<section class="panel">
+  {% if title %}
+  <h2>{{ title }}</h2>
+  {% endif %}
+  {{ caller() if caller }}
+</section>
+{%- endmacro %}

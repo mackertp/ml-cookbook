@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+
+.research-picker {
+  margin-top: $space-5;
+  margin-bottom: $space-4;
+  max-width: 36rem;
+}
+
+.hero__copy {
+  a {
+    color: $color-accent-deep;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}

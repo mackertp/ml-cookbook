@@ -1,0 +1,47 @@
+// ---------------------------------------------------------------------------
+// Design tokens — clinical teaching UI (slate + teal, not purple-default)
+// ---------------------------------------------------------------------------
+
+$font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+$font-body: "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
+$font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+
+$color-ink: #14212b;
+$color-ink-muted: #4a5c6a;
+$color-paper: #f3f6f4;
+$color-paper-deep: #e4ebe6;
+$color-surface: #ffffff;
+$color-line: #c5d0c9;
+$color-accent: #0d6e6e;
+$color-accent-deep: #084f4f;
+$color-accent-soft: #d7efef;
+
+$color-deletion: #b42318;
+$color-deletion-bg: #fde8e6;
+$color-insertion: #b54708;
+$color-insertion-bg: #fff1e0;
+$color-mismatch: #6941c6;
+$color-mismatch-bg: #f4ebff;
+$color-actionable: #027a48;
+$color-actionable-bg: #dcfae6;
+$color-warning: #b54708;
+$color-warning-bg: #fffaeb;
+$color-critical: #b42318;
+$color-critical-bg: #fef3f2;
+$color-info: #175cd3;
+$color-info-bg: #eff8ff;
+
+$radius-sm: 4px;
+$radius-md: 10px;
+$radius-lg: 16px;
+
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-7: 3rem;
+
+$shadow-soft: 0 12px 40px rgba(20, 33, 43, 0.08);
+$max-width: 1120px;

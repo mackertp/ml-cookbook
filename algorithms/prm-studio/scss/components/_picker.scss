@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
@@ -38,7 +39,7 @@
     transition: border-color 160ms ease, box-shadow 160ms ease;
 
     &:hover {
-      border-color: mix($color-accent, $color-line, 45%);
+      border-color: color.mix($color-accent, $color-line, 45%);
     }
 
     &:focus-visible {
@@ -141,24 +142,6 @@
     .picker__option {
       padding: 0.5rem 0.7rem;
       font-size: 0.92rem;
-    }
-  }
-}
-
-.research-picker {
-  margin-top: $space-5;
-  margin-bottom: $space-4;
-  max-width: 36rem;
-}
-
-.hero__copy {
-  a {
-    color: $color-accent-deep;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-
-    &:hover {
-      color: $color-accent;
     }
   }
 }

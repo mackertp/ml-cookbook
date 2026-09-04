@@ -1,0 +1,14 @@
+{
+  "name": "prm-studio",
+  "private": true,
+  "version": "0.2.0",
+  "description": "SCSS build pipeline for prm-studio Flask design system package",
+  "scripts": {
+    "build": "sass scss/main.scss:src/prm_studio/static/css/prm-studio.css --style=expanded --no-source-map",
+    "watch": "sass --watch scss/main.scss:src/prm_studio/static/css/prm-studio.css --style=expanded --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "1.93.2"
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+}

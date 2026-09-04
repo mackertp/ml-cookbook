@@ -1,5 +1,5 @@
 """
-Sequence comparison and protein-impact helpers (from cancer-genomics notebook).
+Sequence comparison and protein-impact helpers (from genomics notebook).
 
 @author: Preston Mackert
 """
@@ -40,13 +40,13 @@ CODON_TABLE = {
 }
 
 REFERENCE_PRESETS = {
-    # --- Cancer (8) ---
+    # --- Oncology focus (8) ---
     "egfr_exon19": {
         "id": "egfr_exon19",
         "label": "EGFR",
         "file": "egfr_exon19_reference.fasta",
         "sample_file": "egfr_exon19_del_sample.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A small stretch of the EGFR gene (exon 19), the most frequent activating mutations in non-small cell lung cancer.",
     },
     "brca1": {
@@ -54,7 +54,7 @@ REFERENCE_PRESETS = {
         "label": "BRCA1",
         "file": "brca1_snippet_reference.fasta",
         "sample_file": "brca1_snippet_frameshift.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A small stretch of BRCA1. Inherited mutations in this gene raise the risk of developing breast, ovarian, prostate, and pancreatic cancers.",
     },
     "btk_c481": {
@@ -62,7 +62,7 @@ REFERENCE_PRESETS = {
         "label": "BTK",
         "file": "btk_c481_reference.fasta",
         "sample_file": "btk_c481s_sample.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A small stretch of BTK modeling the C481 site. In CLL, the C481S missense change is a common resistance mutation after covalent BTK inhibitors; non-covalent inhibitors such as pirtobrutinib can still bind.",
     },
     "kras_g12c": {
@@ -70,7 +70,7 @@ REFERENCE_PRESETS = {
         "label": "KRAS",
         "file": "kras_g12_reference.fasta",
         "sample_file": "kras_g12c_sample.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A small stretch of KRAS modeling codon 12. The G12C missense (Gly→Cys) was long considered “undruggable”; covalent G12C inhibitors are a recent precision-oncology breakthrough in NSCLC.",
     },
     "braf_v600e": {
@@ -78,7 +78,7 @@ REFERENCE_PRESETS = {
         "label": "BRAF",
         "file": "braf_v600_reference.fasta",
         "sample_file": "braf_v600e_sample.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A small stretch of BRAF modeling V600. The V600E missense (Val→Glu) activates MAPK signaling and is a classic biomarker for BRAF inhibitors in melanoma, colorectal cancer, and NSCLC.",
     },
     "esr1_y537s": {
@@ -86,7 +86,7 @@ REFERENCE_PRESETS = {
         "label": "ESR1",
         "file": "esr1_y537_reference.fasta",
         "sample_file": "esr1_y537s_sample.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A small stretch of ESR1 modeling the ligand-binding region. Y537S and related ESR1 mutations drive resistance to aromatase inhibitors in ER+ breast cancer; oral SERDs such as elacestrant target this setting.",
     },
     "ret_m918t": {
@@ -94,7 +94,7 @@ REFERENCE_PRESETS = {
         "label": "RET",
         "file": "ret_m918_reference.fasta",
         "sample_file": "ret_m918t_sample.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A small stretch of RET modeling M918. M918T is a frequent activating mutation in medullary thyroid cancer; selective RET inhibitors (selpercatinib, pralsetinib) are recent precision therapies for RET-driven cancers.",
     },
     "ntrk_fusion": {
@@ -102,7 +102,7 @@ REFERENCE_PRESETS = {
         "label": "NTRK",
         "file": "ntrk_fusion_reference.fasta",
         "sample_file": "ntrk_fusion_sample.fasta",
-        "research_areas": ["cancer"],
+        "research_areas": ["oncology"],
         "context": "A simplified NTRK region with an in-frame insertion standing in for a kinase fusion junction. NTRK fusions are rare but tumor-agnostic; TRK inhibitors such as repotrectinib are recent options for NTRK+ solid tumors.",
     },
     # --- Rare Mendelian Disease (8) ---
@@ -571,7 +571,7 @@ CUSTOM_REFERENCE = {
 
 RESEARCH_AREAS = [
     {
-        "id": "cancer",
+        "id": "oncology",
         "label": "Oncology",
         "description": (
             "Oncology is the study of cancer, which is a disease of the DNA. It starts when genetic mutations corrupt a single cell, causing it to divide "

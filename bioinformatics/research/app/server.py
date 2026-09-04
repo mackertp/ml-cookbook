@@ -14,6 +14,7 @@ like Django - with a robust database and better scalablility.
 from __future__ import annotations
 from pathlib import Path
 from flask import Flask, jsonify, render_template, request
+from prm_studio import register_prm_studio
 from .analysis import (
     analyze_pair,
     list_presets,
@@ -38,6 +39,9 @@ def create_app() -> Flask:
         static_folder=str(APP_DIR / "static"),
         static_url_path="/static",
     )
+
+    # Register shared design-system assets and templates from prm-studio.
+    register_prm_studio(app)
 
     # index route
     @app.get("/")
