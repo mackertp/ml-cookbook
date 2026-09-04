@@ -10,7 +10,7 @@ Folder structure:
 .
 ├── algorithms              # ¯\_(ツ)_/¯
 ├── bioinformatics          # Open-source research
-├── networks                # [Conceptual necessities](https://youtube.com/shorts/6xQBg5LEI5I?si=_3KdKi3GBTC9domo) 
+├── networks                # Conceptual necessities
 ├── robotics
 ├── .gitignore
 ├── poetry.lock             # Pinned dependencies (poetry)
@@ -30,4 +30,4 @@ uname@os:~$ jupyter-lab
 
 ### Project Jupyter
 
-[Jupyter is a tool](https://jupyter.org/) that will help you conduct research and document ideas.
+[Jupyter is a tool](https://jupyter.org/) that will help you conduct research and document ideas. It is [bare bones](https://youtube.com/shorts/6xQBg5LEI5I?si=_3KdKi3GBTC9domo).
