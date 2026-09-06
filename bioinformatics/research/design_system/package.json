@@ -7,7 +7,7 @@
     "watch": "sass --watch scss/main.scss:../app/static/css/research-app.css --style=expanded --no-source-map"
   },
   "devDependencies": {
-    "sass": "1.93.2"
+    "sass": "1.103.1"
   },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
