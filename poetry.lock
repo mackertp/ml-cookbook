@@ -4306,6 +4306,21 @@ dev = ["pre-commit", "tox"]
 testing = ["coverage", "pytest", "pytest-benchmark"]
 
 [[package]]
+name = "prm-studio"
+version = "0.1.1"
+description = "Shared design system package"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "prm_studio-0.1.1-py3-none-any.whl", hash = "sha256:d2667c1add2cdd04659fd74f57146763fedd5c635852066963c7845f9e8b8b8d"},
+    {file = "prm_studio-0.1.1.tar.gz", hash = "sha256:c064305865e0efacbdb993972beda903c88f94f82147e6ec0fd25d5a249d1411"},
+]
+
+[package.dependencies]
+Flask = ">=3.0"
+
+[[package]]
 name = "prometheus-client"
 version = "0.26.0"
 description = "Python client for the Prometheus monitoring system."
@@ -7375,4 +7390,4 @@ xmlsec = ["xmlsec (>=0.6.1)"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "03bd950422479d4dc0a30b04961ec6f69d6e109efa854e415309b395c1c8bda2"
+content-hash = "8b420d7e2ece21e26840c2f025f369f455a41d55cf3ba34dbd210655342abe64"

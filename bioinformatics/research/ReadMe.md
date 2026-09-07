@@ -9,7 +9,7 @@ The World Health Organization (WHO) maintains a global standard for diagnostic h
 For the most up to date research on available medications, I suggest browsing materials from the [PhRMA](https://www.phrma.org/) website.
 
 **A few observations / notes**:
-- Heart disease and cancer are the two leading causes of death - Identifying treatments and preventative care for these diseases is an endeavor that can benefit the lives of humans today and for generations. Big impact.
+- Cardiovascular, oncologic, neurologic, and infectious conditions all benefit from genomics-enabled prevention and treatment strategies. Advancing these capabilities can create durable human impact.
 - ~95% of attempted solutions to treat a disease will fail. It's an investment of your time, talent, and treasure to go after it. Expect to experience failures. Expect to learn and evolve. 
 - If you identify one of the ~5% of solutions that become an effective treatment, you are rewarded with two new problems: access and cost of administration. Coordination of care is tricky. An individual must be prescribed treatment by their physician (sometimes requiring a team of specialists) and gets that prescription filled by their pharmacist. Helping people navigate and afford this journey is itself a challenge.
 
@@ -17,10 +17,22 @@ For the most up to date research on available medications, I suggest browsing ma
 
 This folder contains a notebook, `ehrs.ipynb`, that explores health data systems, interoperability, and where genomic results would land in a clinic. A [Flask application](https://flask.palletsprojects.com/en/stable/) is stored in this folder that builds out a useful tool to research genomics.
 
-To run the app, call the flask command from this folder (with poetry enviornment active):
+Styling is split intentionally:
+- Shared, reusable primitives/components are provided by the published `prm-studio` package.
+- Research-app-specific styles live in `design_system/` and compile to `app/static/css/research-app.css`.
+
+To rebuild app-specific styles:
 
 ```console
-python launch.py
+cd bioinformatics/research/design_system
+yarn install
+yarn build
+```
+
+To run the app, call the flask command from this folder:
+
+```console
+poetry run python launch.py
 ```
 
 More information on the technical code capabilities can be researched in `networks/languages/`. This is not a deployed application; it is built for training and research purposes.

@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../abstracts/variables" as *;
 
 .anomaly-list {
@@ -12,22 +13,22 @@
   background: $color-surface;
 
   &--critical {
-    border-color: mix($color-critical, $color-line, 55%);
+    border-color: color.mix($color-critical, $color-line, 55%);
     background: $color-critical-bg;
   }
 
   &--warning {
-    border-color: mix($color-warning, $color-line, 45%);
+    border-color: color.mix($color-warning, $color-line, 45%);
     background: $color-warning-bg;
   }
 
   &--actionable {
-    border-color: mix($color-actionable, $color-line, 45%);
+    border-color: color.mix($color-actionable, $color-line, 45%);
     background: $color-actionable-bg;
   }
 
   &--info {
-    border-color: mix($color-info, $color-line, 40%);
+    border-color: color.mix($color-info, $color-line, 40%);
     background: $color-info-bg;
   }
 
@@ -94,7 +95,7 @@
   border-radius: $radius-md;
   background: $color-critical-bg;
   color: $color-critical;
-  border: 1px solid mix($color-critical, #fff, 25%);
+  border: 1px solid color.mix($color-critical, #fff, 25%);
 
   &.is-visible {
     display: block;

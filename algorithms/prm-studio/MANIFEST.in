@@ -1,0 +1,4 @@
+recursive-include src/prm_studio/static *
+recursive-include src/prm_studio/templates *
+include README.md
+include license

@@ -3,7 +3,7 @@
 PHP (Hypertext Preprocessor) is a server-side scripting language created by Rasmus Lerdorf in 1994 that added dynamic functionality to web pages. It predates JavaScript and is widely used on the internet in interactive and database-driven websites, powering major platforms like WordPress. Facebook was originally written in PHP, but now uses a modified version called "Hack"... which is fitting for the design of the language.
 
 <img
-    src='https://img.devrant.com/devrant/rant/r_1949365_XBui1.jpg' 
+    src='./web_frameworks/php_heh.png' 
     width='250px' 
 />
 

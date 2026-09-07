@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
@@ -10,7 +11,7 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   text-decoration: none;
-  border-bottom: 1.5px solid mix($color-accent, $color-line, 55%);
+  border-bottom: 1.5px solid color.mix($color-accent, $color-line, 55%);
   transition: color 160ms ease, border-color 160ms ease;
 
   &:hover {
@@ -194,7 +195,7 @@
   width: 100%;
   min-width: 0;
   padding: $space-3 $space-2;
-  border: 1px solid mix($color-line, $color-accent-soft, 55%);
+  border: 1px solid color.mix($color-line, $color-accent-soft, 55%);
   border-radius: $radius-md;
   background: rgba(255, 255, 255, 0.72);
   box-sizing: border-box;
@@ -267,7 +268,7 @@
     width: 0.9rem;
     height: 0.9rem;
     border-radius: 0.2rem;
-    background: mix($color-warning, #fff, 70%);
+    background: color.mix($color-warning, #fff, 70%);
     border: 1px solid $color-warning;
     animation: protein-fall 1.8s ease-in-out infinite;
 
@@ -453,7 +454,7 @@
     padding: 0.2rem 0.35rem;
     border-radius: $radius-sm;
     background: $color-accent-soft;
-    border: 1px solid mix($color-accent, $color-line, 40%);
+    border: 1px solid color.mix($color-accent, $color-line, 40%);
     color: $color-accent-deep;
     font-size: 0.58rem;
     font-weight: 700;
@@ -760,7 +761,7 @@
 
   &:hover {
     transform: translateY(-3px);
-    border-color: mix($color-accent, $color-line, 55%);
+    border-color: color.mix($color-accent, $color-line, 55%);
     box-shadow: 0 16px 44px rgba(20, 33, 43, 0.12);
   }
 

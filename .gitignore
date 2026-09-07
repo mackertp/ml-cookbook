@@ -37,3 +37,11 @@ node_modules/
 book/chapter-1.ipynb
 design-system/node_modules
 languages/ROS/ros2_humble
+*private-key.pem
+*.virtual_documents
+*__init__.py
+*.venv
+
+# Cached public datasets
+algorithms/data/*.csv
+algorithms/data/*.zip
