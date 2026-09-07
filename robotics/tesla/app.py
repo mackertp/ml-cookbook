@@ -12,6 +12,7 @@ Flask application to interface with the Tesla Fleet API.
 from pathlib import Path
 from dotenv import load_dotenv
 from flask import Flask, redirect, request, send_from_directory
+from markupsafe import escape
 import json, secrets, requests, urllib.parse, time, os
 
 
@@ -193,7 +194,7 @@ def index():
 # @app.route("/auth/callback/", strict_slashes=False)
 def callback():
     if "error" in request.args:
-        return f"<h1>Tesla OAuth Error</h1><pre>{dict(request.args)}</pre>", 400
+        return f"<h1>Tesla OAuth Error</h1><pre>{escape(dict(request.args))}</pre>", 400
 
     # Validate state parameter
     state = request.args.get("state")
@@ -202,7 +203,7 @@ def callback():
 
     code = request.args.get("code")
     if not code:
-        return f"<pre>{dict(request.args)}</pre>", 400
+        return f"<pre>{escape(dict(request.args))}</pre>", 400
 
     resp = requests.post("https://fleet-auth.prd.vn.cloud.tesla.com/oauth2/v3/token", data={
         "grant_type": "authorization_code",
@@ -235,7 +236,7 @@ def vehicle(vid):
         try:
             wake_data = wake_resp.json()
         except Exception:
-            return f"<h2>Wake up command failed (non-JSON response):</h2><pre>{wake_resp.text}</pre>", 500
+            return f"<h2>Wake up command failed (non-JSON response):</h2><pre>{escape(wake_resp.text)}</pre>", 500
         # 3. Poll for 'online' state, up to 5 times
         for attempt in range(5):
             time.sleep(2)
@@ -243,7 +244,7 @@ def vehicle(vid):
             if poll_state == 'online':
                 break
         else:
-            return f"<h2>Vehicle did not wake up after several attempts.</h2><pre>{wake_data}</pre>", 500
+            return f"<h2>Vehicle did not wake up after several attempts.</h2><pre>{escape(wake_data)}</pre>", 500
     # 4. Fetch vehicle data
     data_resp = tesla_api.get_vehicle_data(vid)
     if data_resp is None:
@@ -251,7 +252,7 @@ def vehicle(vid):
     try:
         data = data_resp.json()
     except Exception:
-        return f"<h2>Error parsing vehicle data response:</h2><pre>{data_resp.text}</pre>", 500
+        return f"<h2>Error parsing vehicle data response:</h2><pre>{escape(data_resp.text)}</pre>", 500
 
     # Pretty-print: flatten top-level keys and show as HTML table
     def render_dict(d, parent_key=""):
@@ -261,7 +262,7 @@ def vehicle(vid):
             if isinstance(v, dict):
                 rows.extend(render_dict(v, key))
             else:
-                rows.append(f"<tr><td>{key}</td><td>{v}</td></tr>")
+                rows.append(f"<tr><td>{escape(key)}</td><td>{escape(v)}</td></tr>")
         return rows
 
     vehicle_info = data.get('response', {})
