@@ -7,5 +7,5 @@ Python was created by Guido van Rossum in 1989 and initially released in 1991. V
      width='250px'
 />
 
-Today, the Python ecosystem is somewhat omni-present. The Python notebooks in this directory share a few staples of data science and machine learning. Python also has several web frameworks and robotics libraries that make it one of the most versatile and enjoyable languages to code in.
+Today, the Python ecosystem is somewhat omnipresent. The Python notebooks in this directory share a few staples of data science and machine learning. Python also has several web frameworks and robotics libraries that make it one of the most versatile and enjoyable languages to code in.
 

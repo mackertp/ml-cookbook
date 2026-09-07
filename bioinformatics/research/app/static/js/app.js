@@ -1,9 +1,9 @@
 /**
- * Frontend application logic for the genomics app. The design_system folder contains 
- * a scss system that is used for custom styling of the app, written to main.css. 
- * 
- * Thank God for modern AI, it makes it so much easier to write code!
- * 
+ * Frontend application logic for the genomics app.
+ *
+ * Shared UI primitives come from prm-studio.
+ * Research-specific styling is layered via app/static/css/research-app.css.
+ *
  * @author: Preston Mackert
  */
 
@@ -192,7 +192,7 @@
 
   function selectedResearchAreaId() {
     const selected = researchMenu.querySelector('.picker__option[aria-selected="true"]');
-    return selected ? selected.dataset.value : "cancer";
+    return selected ? selected.dataset.value : (researchAreas[0]?.id || "oncology");
   }
 
   function presetsForArea(areaId) {
@@ -208,12 +208,6 @@
     const current = presetInput.value;
     if (available.some((preset) => preset.id === current)) {
       return current;
-    }
-    if (areaId === "cancer") {
-      const egfr = available.find((preset) => preset.id === "egfr_exon19");
-      if (egfr) {
-        return egfr.id;
-      }
     }
     const teaching = available.find((preset) => preset.id);
     return teaching ? teaching.id : "";
@@ -521,7 +515,7 @@
     }
   });
 
-  const initialArea = researchAreas.find((item) => item.id === "cancer") || researchAreas[0];
+  const initialArea = researchAreas.find((item) => item.id === "oncology") || researchAreas[0];
   if (initialArea) {
     heroCopy.innerHTML = initialArea.description;
   }

@@ -14,7 +14,6 @@ import sys
 from pathlib import Path
 from app.server import main
 
-
 # ------------------------------------------------------------------------------------- #
 # the apps entry point when python launch.py is executed from the command line
 # ------------------------------------------------------------------------------------- #
