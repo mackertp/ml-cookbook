@@ -163,7 +163,7 @@ ptyprocess==0.7.0 ; python_version >= "3.12" and python_version < "4.0" and (os_
 pulp==3.3.2 ; python_version >= "3.12" and python_version < "4.0"
 pure-eval==0.2.3 ; python_version >= "3.12" and python_version < "4.0"
 pyasn1-modules==0.4.2 ; python_version >= "3.12" and python_version < "4.0"
-pyasn1==0.6.4 ; python_version >= "3.12" and python_version < "4.0"
+pyasn1==0.6.5 ; python_version >= "3.12" and python_version < "4.0"
 pybase64==1.4.3 ; python_version >= "3.12" and python_version < "4.0"
 pycparser==3.0 ; python_version >= "3.12" and python_version < "4.0" and implementation_name != "PyPy"
 pydantic-core==2.47.0 ; python_version >= "3.12" and python_version < "4.0"
